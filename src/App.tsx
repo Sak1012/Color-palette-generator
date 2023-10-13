@@ -135,7 +135,7 @@ function App() {
               className="w-[100px] h-[50px] bg-mb border-4 border-black"
               onClick={downloadAsImage}
             >
-              d
+              download
             </button>
           </div>
           <div>
@@ -143,7 +143,7 @@ function App() {
               className="w-[100px] h-[50px] bg-mr border-4 border-black"
               onClick={resetState}
             >
-              r
+              refresh
             </button>
           </div>
         </div>
