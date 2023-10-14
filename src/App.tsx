@@ -47,34 +47,6 @@ function App() {
       console.log(`Copied to clipboard: ${hexCode}`);
     });
   };
-  const downloadAsImage = () => {
-    const paletteElement = colorPaletteRef.current;
-
-    if (paletteElement) {
-      const canvas = document.createElement("canvas");
-      const context = canvas.getContext("2d");
-
-      if (context) {
-        canvas.width = paletteElement.offsetWidth;
-        canvas.height = paletteElement.offsetHeight;
-
-        context.drawSvg(
-          new XMLSerializer().serializeToString(paletteElement),
-          0,
-          0,
-        );
-
-        const image = new Image();
-        image.src = canvas.toDataURL("image/png");
-
-        const a = document.createElement("a");
-        a.href = image.src;
-        a.download = "color_palette.png";
-        a.click();
-      }
-    }
-  };
-
   return (
     <>
       <h1 className="text-5xl pb-4">Color Palette Generator</h1>
@@ -130,14 +102,7 @@ function App() {
               Generate
             </button>
           </div>
-          <div>
-            <button
-              className="w-[100px] h-[50px] bg-mb border-4 border-black"
-              onClick={downloadAsImage}
-            >
-              download
-            </button>
-          </div>
+          <div></div>
           <div>
             <button
               className="w-[100px] h-[50px] bg-mr border-4 border-black"
